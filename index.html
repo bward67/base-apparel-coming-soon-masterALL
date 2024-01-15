@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.svg" alt="logo" class="logo1" />
+    </header>
+
+    <div class="main">
+      <picture>
+        <source
+          media="(max-width: 568px)"
+          srcset="./images/hero-mobile.jpg"
+          class="image"
+        />
+
+        <!--so when the screen size goes bigger than 568px we will change the image-->
+
+        <img
+          src="images/hero-desktop.jpg"
+          alt="girl with tree behind her"
+          class="image2"
+        />
+      </picture>
+
+      <div class="content-and-form">
+        <header>
+          <img src="images/logo.svg" alt="logo" class="logo2" />
+        </header>
+        <div class="content">
+          <h1>We're <span>coming soon</span></h1>
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+        </div>
+        <form class="form-control">
+          <input
+            type="text"
+            name="email"
+            class="email"
+            placeholder="Email Address"
+          />
+          <!--if you put type="email" it will throw you an alert-type message which you do not want in this case as you want to set your own message-->
+
+          <img src="images/icon-error.svg" alt="" class="error-icon" />
+
+          <button type="submit">
+            <!--DO NOT FORGET to put this into a button or it won't work in JS with the addEventListener when you listen for the "submit"-->
+            <img src="images/icon-arrow.svg" alt="" class="arrow-btn" />
+          </button>
+          <small class="error-text">Error Message</small>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>

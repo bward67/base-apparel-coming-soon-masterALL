@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/*
+Mobile: 375px
+Desktop: 1440px
+
+fonts 300 400 600
+
+### Gradients
+
+- Linear, 135deg, from 	#ffffff, to 	#fff5f5
+- Linear, 135deg, from 	#f8bfbf, to 	#ee8c8c*/
+:root {
+  --desaturated-red: #ce9797;
+  --soft-red: #f96262;
+  --dark-grayish-red: #413a3a;
+  --white: #ffffff;
+  --linear-gradient-1: linear-gradient(135deg, #ffffff, #fff5f5);
+  --linear-gradient-2: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  --linear-gradient-3: linear-gradient(135deg, #ee8c8c, #ee8c8c);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  /*but NOT width: 100% or the error icon will go too big*/
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  color: var(--desaturated-red);
+  display: grid;
+  place-items: left;
+}
+
+body header .logo1 {
+  padding: 1.5em 0 1.5em 1.5em;
+  width: 35%;
+}
+.logo2 {
+  display: none;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main .content h1 span {
+  color: var(--dark-grayish-red);
+  font-weight: 600;
+}
+
+.main h1 {
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.main p {
+  line-height: 1.4;
+}
+.content {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+.content-and-form {
+  padding: 0 1rem;
+}
+
+/**
+*! FORM STYLES
+*/
+.form-control {
+  position: relative;
+  /*then we will set the button and error icon to absolute*/
+}
+.form-control input {
+  padding: 0.8rem 1rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid var(--desaturated-red);
+  margin: 2em 0 0.5rem 0;
+}
+.form-control input::placeholder {
+  /*::placeholder represents the placeholder text in an <input> or <textarea> element*/
+  color: var(--desaturated-red);
+}
+.error-text {
+  display: none;
+  margin: 0.5rem 0 0 0.55rem !important;
+}
+
+.error-icon {
+  /*this is our error !*/
+  position: absolute;
+  top: 34%;
+  transform: translateY(35%);
+  right: 5.5rem;
+  display: none;
+}
+
+.arrow-btn {
+  /*this is our arrow button which we put into our big button*/
+  position: absolute;
+  top: 61%; /*I didn't know you could do this in %'ages*/
+  transform: translateY(-65%); /*I never used this before*/
+  right: -0.5rem; /*so that it overhangs the side of the input just a bit*/
+  background-image: var(--linear-gradient-2); /*so NOT background-color!!*/
+  padding: 0.8rem 2rem; /*the same as the input*/
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s; /*I LOVE this */
+}
+.form-control button:hover {
+  background-image: var(--linear-gradient-3);
+}
+/*Error classes*/
+.error .error-icon,
+.error .error-text,
+.error input {
+  color: var(--soft-red);
+  border-color: var(--soft-red);
+  display: block;
+}
+.error .form-control {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  /*for tablets and larger*/
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .main {
+    flex-direction: row-reverse;
+    text-align: left;
+    max-width: 1000px;
+    box-shadow: 1px 3px 6px 4px lightgray;
+  }
+  .content-and-form {
+    padding: 2em 10em 0em 8em;
+    margin: 0px;
+    flex: 1; /*setting this instead of doing flex-basis 60% made the image fit better*/
+  }
+  .content h1 {
+    margin-top: 2em;
+    letter-spacing: 13px;
+    font-size: 3em;
+  }
+
+  .main picture img {
+    width: 100%;
+    height: 100%; /*I needed this to make the image fit perfect*/
+  }
+  .logo1 {
+    display: none;
+  }
+  .logo2 {
+    display: block;
+    width: 40%;
+  }
+  .main p {
+    font-size: 0.65em;
+    line-height: 1.8;
+  }
+
+  form input {
+    margin-top: 0px;
+  }
+
+  form label {
+    right: 340px;
+  }
+  form button {
+    right: 250px;
+  }
+  form small {
+    margin: 0 0 0 16px !important;
+    width: 100%;
+  }
+}

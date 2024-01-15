@@ -1,0 +1,51 @@
+@import
+url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+/* Mobile: 375px - Desktop: 1440px fonts 300 400 600 ### Gradients - Linear,
+135deg, from #ffffff, to #fff5f5 - Linear, 135deg, from #f8bfbf, to #ee8c8c*/
+:root { --desaturated-red: #ce9797; --soft-red: #f96262; --dark-grayish-red:
+#413a3a; --white: #ffffff; --linear-gradient-1: (135deg, #ffffff, #fff5f5);
+--linear-gradient-2: (135deg, #f8bfbf, #ee8c8c); } * { margin: 0px; padding:
+0px; box-sizing: border-box; } body { font-family: "Josefin Sans", sans-serif;
+font-size: 16px; } .container { background-color: var(--white); color:
+var(--desaturated-red); width: 400px; max-width: 100% !important; /*max-width:
+100%;*/ min-height: 100vh; /*you MUST have min-height here and not just height
+or the logo goes missing on the top*/ display: grid; grid-template-rows: 80px
+250px 1fr 150px; grid-template-areas: "logo" "image" "content" "form";
+align-content: center; border: 2px red solid; } .container header { grid-area:
+logo; border: 3px orange solid; } .container header .logo { width: 25%
+!important; height: auto; margin: 30px; } img { /*He did this ???? but it makes
+the arrow too BIG*/ max-width: 100%; } .container picture { grid-area: image;
+border: 3px hotpink solid; } .container picture img .image { width: 100%; }
+.container picture img .image2 { position: relative; z-index: -1; } .container
+.content { grid-area: content; text-align: center; border: 3px green solid;
+margin: 60px 40px; max-width: 400px; } .content h1 { text-transform: uppercase;
+font-weight: 300; letter-spacing: 5px; font-size: 3rem; margin-bottom: 20px; }
+.content h1 span { color: var(--dark-grayish-red); font-weight: 600; } .content
+p { line-height: 25px; font-size: 14px; } .container .form { grid-area: form;
+margin: 0px; position: relative; border: 3px blue solid; } .form input {
+border-radius: 40px; padding: 20px; width: 80%; border: 1px solid
+var(--desaturated-red) !important; font-family: inherit; /*margin: 0 30px 5px
+38px !important;*/ } .form input[type="text"] { border: 1px solid
+var(--desaturated-red); } .container .form input::placeholder { color:
+var(--desaturated-red); opacity: 0.8; } .container .form button .arrow-btn {
+position: absolute; right: 0; top: 0; width: 70px; height: 100%; border-radius:
+40px; padding: 17px 30px; cursor: pointer; z-index: 5; max-width: 100%;
+background-image: var(--linear-gradient-2); } .form .error-btn { position:
+absolute; right: 150px; bottom: 110px; /*visibility: hidden;*/ } .form
+.arrow-btn:hover { transform: scale(1.1); background-color:
+var(--desaturated-red); } .form.error input { /*this is for when there is not a
+correct email*/ border: 2px solid var(--soft-red); color: black; } .form.error
+.error-btn { /*this is for when there is not a correct email*/ visibility:
+visible; } .form.success { color: blue; } .form small { margin: 3px 0 0 50px
+!important; visibility: hidden; } .form.error small { visibility: visible; }
+.attribution { font-size: 11px; text-align: center; margin-top: 20px; }
+.attribution a { color: hsl(228, 45%, 44%); } /** *! MEDIA QUERIES */ @media
+(min-width: 568px) { body { background: url(images/bg-pattern-desktop.svg)
+no-repeat center/cover; } .container { width: 1200px; height: 600px;
+grid-template-columns: 650px 550px; grid-template-rows: 100px 400px 100px;
+grid-template-areas: "logo image2" "content image2" "form image2"; } .image2 {
+grid-area: image2; width: 550px; height: 600px; } .content, .logo, .form {
+margin: auto 112px; text-align: left; } .form button { position: absolute;
+right: 700px; bottom: 228px; } .form .error-btn { position: absolute; right:
+90px; bottom: 15px; visibility: hidden; } .form .arrow { position: absolute;
+right: 0px; bottom: 0px; } }

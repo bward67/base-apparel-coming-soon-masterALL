@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="images/logo.svg" alt="logo" />
+    </div>
+    <main>
+      <article>
+        <div class="logo">
+          <!--He places the logo here as well - so 2x and then he selects the 2nd one in his css for the mobile size and asks it to Display: none-->
+          <img src="images/logo.svg" alt="logo" />
+        </div>
+        <h1>We're <span>coming soon</span></h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form aria-autocomplete="off">
+          <!--So that there are no suggestions to complete the form-->
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <label for="email">
+              <img src="images/icon-error.svg" alt="" />
+            </label>
+            <!--so when we click on this error img it will highlight the input??-->
+            <button type="submit" class="submit">
+              <img src="images/icon-arrow.svg" alt="" />
+            </button>
+            <!--it must appear in-line with the input-->
+          </div>
+          <small class="error">Please provide a valid email</small>
+          <!--use <small> to make the text one size smaller-->
+        </form>
+      </article>
+      <article>
+        <picture>
+          <source
+            media="(max-width: 568px)"
+            srcset="./images/hero-mobile.jpg"
+            class="image"
+          />
+          <!--so when the screen size goes bigger than 568px we will change the image-->
+          <img
+            src="images/hero-desktop.jpg"
+            alt="girl with tree behind her"
+            class="image2"
+          />
+        </picture>
+      </article>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Barbara Ward</a>.
+      </p>
+    </footer>
+  </body>
+  <script src="app.js"></script>
+</html>
+
+<!--https://www.youtube.com/watch?v=09wN4Rp9EGk
+15:00
+it lasts 56:00
+I learned about how to put 2 different images for 2 different screen sizes BUT he makes some errors - like styling the button and the tablet size!!
+Indian Guy - Thomas Sankara-->
